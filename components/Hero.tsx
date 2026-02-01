@@ -1,11 +1,11 @@
 export default function Hero() {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Background Image - Replace with your own: /public/images/hero/hero-bg.jpg */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1561214115-f2f134cc4912?q=80&w=2070')`,
+          backgroundImage: `url('/images/hero/hero-bg.jpg')`,
         }}
       >
         {/* Dark Overlay */}

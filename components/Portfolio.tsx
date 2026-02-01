@@ -5,54 +5,61 @@ import Image from 'next/image'
 
 const categories = ['All', 'Murals', 'Canvas', 'Restorations']
 
+// =============================================================================
+// PORTFOLIO CONFIGURATION - Edit this array to add/remove your artwork
+// Images go in: /public/images/portfolio/{murals|canvas|restorations}/
+// =============================================================================
 const portfolioItems = [
+  // MURALS
   {
     id: 1,
-    title: 'Urban Street Mural',
+    title: 'Community Center Mural',
     category: 'Murals',
-    image: 'https://images.unsplash.com/photo-1561214115-f2f134cc4912?q=80&w=800',
+    image: '/images/portfolio/murals/community-center.jpg',
   },
   {
     id: 2,
-    title: 'Abstract Expression',
-    category: 'Canvas',
-    image: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?q=80&w=800',
+    title: 'School Mural Project',
+    category: 'Murals',
+    image: '/images/portfolio/murals/school-mural.jpg',
   },
   {
     id: 3,
-    title: 'Community Center Mural',
+    title: 'Historic Building Mural',
     category: 'Murals',
-    image: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=800',
+    image: '/images/portfolio/murals/historic-building.jpg',
   },
+  // CANVAS
   {
     id: 4,
-    title: 'Vintage Portrait Restoration',
-    category: 'Restorations',
-    image: 'https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?q=80&w=800',
+    title: 'Abstract Expression',
+    category: 'Canvas',
+    image: '/images/portfolio/canvas/abstract-1.jpg',
   },
   {
     id: 5,
     title: 'Coastal Landscape',
     category: 'Canvas',
-    image: 'https://images.unsplash.com/photo-1518893063132-36e46dbe2428?q=80&w=800',
+    image: '/images/portfolio/canvas/landscape-1.jpg',
   },
   {
     id: 6,
-    title: 'Historic Building Mural',
-    category: 'Murals',
-    image: 'https://images.unsplash.com/photo-1555448248-2571daf6344b?q=80&w=800',
+    title: 'Modern Abstract',
+    category: 'Canvas',
+    image: '/images/portfolio/canvas/abstract-2.jpg',
   },
+  // RESTORATIONS
   {
     id: 7,
-    title: 'Family Photo Restoration',
+    title: 'Vintage Portrait Restoration',
     category: 'Restorations',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800',
+    image: '/images/portfolio/restorations/portrait-1.jpg',
   },
   {
     id: 8,
-    title: 'Modern Abstract',
-    category: 'Canvas',
-    image: 'https://images.unsplash.com/photo-1549490349-8643362247b5?q=80&w=800',
+    title: 'Family Photo Restoration',
+    category: 'Restorations',
+    image: '/images/portfolio/restorations/family-1.jpg',
   },
 ]
 

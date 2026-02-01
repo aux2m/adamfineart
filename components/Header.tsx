@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 
 const navLinks = [
@@ -13,6 +14,7 @@ const navLinks = [
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [logoError, setLogoError] = useState(false)
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-white/10">
@@ -20,9 +22,21 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-2xl font-heading font-bold text-text-primary">
-              Adam <span className="text-accent">Fine Art</span>
-            </span>
+            {!logoError ? (
+              <Image
+                src="/images/logo/logo.png"
+                alt="Adam Fine Art"
+                width={180}
+                height={60}
+                className="h-12 w-auto"
+                onError={() => setLogoError(true)}
+                priority
+              />
+            ) : (
+              <span className="text-2xl font-heading font-bold text-text-primary">
+                Adam <span className="text-accent">Fine Art</span>
+              </span>
+            )}
           </Link>
 
           {/* Desktop Navigation */}
