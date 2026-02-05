@@ -3,63 +3,173 @@
 import { useState } from 'react'
 import Image from 'next/image'
 
-const categories = ['All', 'Murals', 'Canvas', 'Restorations']
+const categories = ['All', 'Murals', 'Pop Culture', 'Western', 'Portraits', 'Fantasy']
 
 // =============================================================================
 // PORTFOLIO CONFIGURATION - Edit this array to add/remove your artwork
-// Images go in: /public/images/portfolio/{murals|canvas|restorations}/
+// Images go in: /public/images/portfolio/canvas/
 // =============================================================================
 const portfolioItems = [
-  // MURALS
+  // MURALS - Large-scale wall art
   {
     id: 1,
-    title: 'Community Center Mural',
+    title: 'ShePower Global Leadership Academy',
     category: 'Murals',
-    image: '/images/portfolio/murals/community-center.jpg',
+    image: '/images/portfolio/murals/IMG_4675.JPEG',
   },
+  // POP CULTURE - Star Wars, Marvel, Disney, etc.
   {
     id: 2,
-    title: 'School Mural Project',
-    category: 'Murals',
-    image: '/images/portfolio/murals/school-mural.jpg',
+    title: 'Alderaan Graffiti',
+    category: 'Pop Culture',
+    image: '/images/portfolio/canvas/IMG_3904.JPEG',
   },
   {
     id: 3,
-    title: 'Historic Building Mural',
-    category: 'Murals',
-    image: '/images/portfolio/murals/historic-building.jpg',
+    title: 'Destiny',
+    category: 'Pop Culture',
+    image: '/images/portfolio/canvas/IMG_3899.JPEG',
   },
-  // CANVAS
   {
     id: 4,
-    title: 'Abstract Expression',
-    category: 'Canvas',
-    image: '/images/portfolio/canvas/abstract-1.jpg',
+    title: 'Urban Stormtrooper',
+    category: 'Pop Culture',
+    image: '/images/portfolio/canvas/IMG_3913.JPEG',
   },
   {
     id: 5,
-    title: 'Coastal Landscape',
-    category: 'Canvas',
-    image: '/images/portfolio/canvas/landscape-1.jpg',
+    title: 'Master Yoda',
+    category: 'Pop Culture',
+    image: '/images/portfolio/canvas/B32A5C94-D324-49EB-90C1-54B73D252A07.jpg',
   },
   {
     id: 6,
-    title: 'Modern Abstract',
-    category: 'Canvas',
-    image: '/images/portfolio/canvas/abstract-2.jpg',
+    title: 'The Falcon',
+    category: 'Pop Culture',
+    image: '/images/portfolio/canvas/IMG_3900.JPEG',
   },
-  // RESTORATIONS
   {
     id: 7,
-    title: 'Vintage Portrait Restoration',
-    category: 'Restorations',
-    image: '/images/portfolio/restorations/portrait-1.jpg',
+    title: 'Spider-Man NYC',
+    category: 'Pop Culture',
+    image: '/images/portfolio/canvas/IMG_4904.JPG',
   },
   {
     id: 8,
-    title: 'Family Photo Restoration',
-    category: 'Restorations',
-    image: '/images/portfolio/restorations/family-1.jpg',
+    title: 'Iron Man',
+    category: 'Pop Culture',
+    image: '/images/portfolio/canvas/IMG_4603.JPEG',
+  },
+  {
+    id: 9,
+    title: 'Magic Kingdom',
+    category: 'Pop Culture',
+    image: '/images/portfolio/canvas/IMG_2012.JPG',
+  },
+  {
+    id: 10,
+    title: 'Radiator Springs',
+    category: 'Pop Culture',
+    image: '/images/portfolio/canvas/IMG_2351.JPG',
+  },
+  {
+    id: 11,
+    title: 'Penguin Pilots',
+    category: 'Pop Culture',
+    image: '/images/portfolio/canvas/IMG_3452.JPEG',
+  },
+  // WESTERN - Horses, Native American themes
+  {
+    id: 12,
+    title: 'Blessed Are The Meek',
+    category: 'Western',
+    image: '/images/portfolio/canvas/IMG_4821.JPG',
+  },
+  {
+    id: 13,
+    title: 'Empathy',
+    category: 'Western',
+    image: '/images/portfolio/canvas/IMG_3845.JPEG',
+  },
+  {
+    id: 14,
+    title: 'The Kiss',
+    category: 'Western',
+    image: '/images/portfolio/canvas/IMG_2358.JPEG',
+  },
+  {
+    id: 15,
+    title: 'Mother & Calf',
+    category: 'Western',
+    image: '/images/portfolio/canvas/IMG_6763.JPG',
+  },
+  {
+    id: 16,
+    title: 'Aztec Princess',
+    category: 'Western',
+    image: '/images/portfolio/canvas/IMG_3847.JPEG',
+  },
+  // PORTRAITS - Dia de los Muertos, Gothic, Warriors
+  {
+    id: 17,
+    title: 'La Catrina',
+    category: 'Portraits',
+    image: '/images/portfolio/canvas/IMG_6874.JPEG',
+  },
+  {
+    id: 18,
+    title: 'Mariposa',
+    category: 'Portraits',
+    image: '/images/portfolio/canvas/IMG_2359.JPG',
+  },
+  {
+    id: 19,
+    title: 'Queen of Shadows',
+    category: 'Portraits',
+    image: '/images/portfolio/canvas/IMG_5925.JPEG',
+  },
+  {
+    id: 20,
+    title: 'Neon Dreams',
+    category: 'Portraits',
+    image: '/images/portfolio/canvas/IMG_3457.JPEG',
+  },
+  {
+    id: 21,
+    title: 'Polynesian Beauty',
+    category: 'Portraits',
+    image: '/images/portfolio/canvas/IMG_7629.JPEG',
+  },
+  {
+    id: 22,
+    title: 'The Gentleman',
+    category: 'Portraits',
+    image: '/images/portfolio/canvas/76712E29-56ED-4155-B7C4-EA7BA9110AB1.jpg',
+  },
+  {
+    id: 23,
+    title: 'Spartan',
+    category: 'Portraits',
+    image: '/images/portfolio/canvas/3E052B53-76CE-4885-865B-73099BF9D006.jpg',
+  },
+  // FANTASY - Alice in Wonderland, Peter Pan, Maleficent
+  {
+    id: 24,
+    title: 'Who Are You?',
+    category: 'Fantasy',
+    image: '/images/portfolio/canvas/IMG_7762.JPEG',
+  },
+  {
+    id: 25,
+    title: 'Second Star to the Right',
+    category: 'Fantasy',
+    image: '/images/portfolio/canvas/IMG_4816.JPEG',
+  },
+  {
+    id: 26,
+    title: 'Mistress of Evil',
+    category: 'Fantasy',
+    image: '/images/portfolio/canvas/IMG_4818.JPEG',
   },
 ]
 

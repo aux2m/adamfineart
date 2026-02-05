@@ -26,9 +26,9 @@ export default function Header() {
               <Image
                 src="/images/logo/logo.png"
                 alt="Adam Fine Art"
-                width={180}
-                height={60}
-                className="h-12 w-auto"
+                width={720}
+                height={240}
+                className="h-20 w-auto invert"
                 onError={() => setLogoError(true)}
                 priority
               />

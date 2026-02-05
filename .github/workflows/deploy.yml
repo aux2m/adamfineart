@@ -1,0 +1,55 @@
+# .github/workflows/deploy.yml
+# Build Next.js static site and deploy to Hostinger shared hosting
+#
+# SETUP:
+# 1. In your GitHub repo, go to Settings > Secrets and variables > Actions
+# 2. Add these secrets:
+#    - HOSTINGER_HOST     -> Your server hostname (find in hPanel > Advanced > SSH Access)
+#    - HOSTINGER_USERNAME -> Your FTP username (find in hPanel > Files > FTP Accounts)
+#    - HOSTINGER_PASSWORD -> Your FTP password
+#
+# 3. Update 'server-dir' below to match your domain's public_html path:
+#    Main domain:   /home/u[NUMBERS]/domains/adamfineart.com/public_html/
+#    Addon domain:  /home/u[NUMBERS]/domains/[domain]/public_html/
+
+name: Deploy to Hostinger
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static site
+        run: npm run build
+
+      - name: Deploy to Hostinger
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.HOSTINGER_HOST }}
+          username: ${{ secrets.HOSTINGER_USERNAME }}
+          password: ${{ secrets.HOSTINGER_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./out/
+          server-dir: /public_html/  # UPDATE THIS to your domain's path
+          exclude: |
+            **/.git*
+            **/.git*/**

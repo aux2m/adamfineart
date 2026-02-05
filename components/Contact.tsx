@@ -7,14 +7,14 @@ const contactInfo = [
   {
     icon: Phone,
     label: 'Phone',
-    value: '(661) 555-0123',
-    href: 'tel:+16615550123',
+    value: '(661) 204-1154',
+    href: 'tel:+16612041154',
   },
   {
     icon: Mail,
     label: 'Email',
-    value: 'contact@adamfineart.com',
-    href: 'mailto:contact@adamfineart.com',
+    value: 'adamwentworth@outlook.com',
+    href: 'mailto:adamwentworth@outlook.com',
   },
   {
     icon: MapPin,

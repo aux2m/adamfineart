@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  trailingSlash: true,
   images: {
-    // Local images from /public work by default
-    // Add remote domains here if needed
+    unoptimized: true,
     remotePatterns: [],
   },
 }
