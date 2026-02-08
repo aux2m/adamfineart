@@ -7,14 +7,14 @@ const contactInfo = [
   {
     icon: Phone,
     label: 'Phone',
-    value: '(661) 204-1154',
-    href: 'tel:+16612041154',
+    value: '555-123-4567',
+    href: 'tel:+15551234567',
   },
   {
     icon: Mail,
     label: 'Email',
-    value: 'adamwentworth@outlook.com',
-    href: 'mailto:adamwentworth@outlook.com',
+    value: 'adam@adamfineart.com',
+    href: 'mailto:adam@adamfineart.com',
   },
   {
     icon: MapPin,
@@ -162,8 +162,8 @@ export default function Contact() {
                   >
                     <option value="">Select a service</option>
                     <option value="murals">Custom Murals</option>
-                    <option value="canvas">Canvas Paintings</option>
-                    <option value="restoration">Photo Restorations</option>
+                    <option value="originals">Originals</option>
+                    <option value="prints">Art Prints</option>
                     <option value="other">Other</option>
                   </select>
                 </div>

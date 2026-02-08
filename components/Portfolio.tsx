@@ -189,7 +189,7 @@ export default function Portfolio() {
             Portfolio
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto">
-            Explore a collection of custom murals, canvas paintings, and photo restorations
+            Explore a collection of custom murals and canvas paintings
             that showcase the artistry and attention to detail in every project.
           </p>
         </div>

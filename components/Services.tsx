@@ -1,4 +1,4 @@
-import { Paintbrush, Frame, ImageIcon } from 'lucide-react'
+import { Paintbrush, Frame, Printer } from 'lucide-react'
 
 const services = [
   {
@@ -10,17 +10,17 @@ const services = [
   },
   {
     icon: Frame,
-    title: 'Canvas Paintings',
+    title: 'Originals',
     description:
-      'Commission a unique canvas painting tailored to your vision. Whether abstract, portrait, landscape, or any style, each piece is a one-of-a-kind creation designed just for you.',
-    features: ['Original Artwork', 'Custom Sizes', 'Framing Available'],
+      'Commission a unique original painting tailored to your vision. Whether on canvas, board, or other surfaces, each piece is a one-of-a-kind creation designed just for you.',
+    features: ['One-of-a-Kind', 'Custom Sizes', 'Various Surfaces'],
   },
   {
-    icon: ImageIcon,
-    title: 'Photo Restorations',
+    icon: Printer,
+    title: 'Art Prints',
     description:
-      'Bring cherished memories back to life with professional photo restoration. From minor touch-ups to complete restorations of damaged photographs, preserving your history is my priority.',
-    features: ['Damage Repair', 'Color Restoration', 'Digital & Print'],
+      'Own a piece of the collection with museum-quality reproductions. Available as limited edition canvas giclees, paper prints, and posters in various sizes.',
+    features: ['Canvas Giclees', 'Paper Prints', 'Multiple Sizes'],
   },
 ]
 
@@ -35,7 +35,7 @@ export default function Services() {
           </h2>
           <p className="text-text-secondary max-w-2xl mx-auto">
             Professional art services tailored to bring your creative vision to life,
-            from large-scale murals to intimate restorations.
+            from large-scale murals to original paintings and quality prints.
           </p>
         </div>
 
